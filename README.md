@@ -1,7 +1,7 @@
 
-# 🚀 Three-Tier Python App Deployment on AWS Using Terraform
+# 🚀 Three-Tier App Deployment on AWS Using Terraform
 
-Welcome! This guide will walk you through deploying a simple Python application with a three-tier architecture on AWS using Terraform. 🌐🛠️
+Welcome! This guide will walk you through deploying a simple  application with a three-tier architecture on AWS using Terraform. 🌐🛠️
 
 ## 📦 Overview
 
