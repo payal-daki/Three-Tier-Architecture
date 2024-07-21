@@ -1,7 +1,23 @@
 
 # 🚀 Three-Tier App Deployment on AWS Using Terraform
 
-Welcome! This guide will walk you through deploying a simple  application with a three-tier architecture on AWS using Terraform. 🌐🛠️
+Welcome! This guide will walk you through deploying a simple application with a three-tier architecture on AWS using Terraform. 🌐🛠️
+
+## 📑 Table of Contents
+- [Overview](#-overview)
+- [Prerequisites](#-prerequisites)
+- [Getting Started](#-getting-started)
+  - [Configure Your Provider](#1-configure-your-provider)
+  - [Define Resources](#2-define-resources)
+  - [Configure Your Variables](#3-configure-your-variables)
+  - [Initialize Terraform](#4-initialize-terraform)
+  - [Plan Your Deployment](#5-plan-your-deployment)
+  - [Apply the Configuration](#6-apply-the-configuration)
+  - [Verify the Deployment](#7-verify-the-deployment)
+- [Files](#-files)
+- [Challenges Faced](#-challenges-faced)
+- [Additional Resources](#-additional-resources)
+- [Troubleshooting Tips](#-troubleshooting-tips)
 
 ## 📦 Overview
 
@@ -22,49 +38,29 @@ Before you start, make sure you have:
 
 ## 🚀 Getting Started
 
-### 1. **Configure Your Variables**
+### 1. **Configure Your Provider**
+
+Specify the AWS provider and region where your resources will be created in the `provider.tf` file.
+
+### 2. **Define Resources**
+
+Define the AWS resources for your VPC, subnets, security groups, EC2 instances, RDS database, and Application Load Balancer in the `main.tf` file.
+
+### 3. **Configure Your Variables**
 
 Update `variables.tf` with your desired values. This file defines the variables for your deployment, such as AWS region, VPC CIDR, subnet configurations, EC2 instance types, security group settings, and database credentials.
 
-### 2. **Setup the Provider**
-
-In `provider.tf`, specify the AWS provider and region where your resources will be created.
-
-### 3. **Define Resources**
-
-In `main.tf`, define the AWS resources for:
-- **VPC**: Sets up a Virtual Private Cloud.
-- **Subnets**: Creates web and application subnets.
-- **Security Groups**: Configures security groups for the web and application tiers.
-- **EC2 Instances**: Launches web and application EC2 instances.
-- **RDS Database**: Sets up a MySQL database instance.
-- **Application Load Balancer**: Configures an ALB to distribute incoming traffic to your web instances.
-
 ### 4. **Initialize Terraform**
 
-Run the following command to initialize your Terraform configuration:
-
-```bash
-terraform init
-```
+Run the command to initialize your Terraform configuration.
 
 ### 5. **Plan Your Deployment**
 
-Review the changes Terraform will make with:
-
-```bash
-terraform plan
-```
+Review the changes Terraform will make by running the appropriate command.
 
 ### 6. **Apply the Configuration**
 
-Deploy your resources to AWS with:
-
-```bash
-terraform apply
-```
-
-Type `yes` when prompted to confirm the deployment.
+Deploy your resources to AWS by running the apply command and confirming the deployment.
 
 ### 7. **Verify the Deployment**
 
@@ -72,13 +68,13 @@ After applying, Terraform will output the DNS name of the Application Load Balan
 
 ## 🔧 Files
 
-- **`variables.tf`**: Defines variables used in the configuration.
 - **`provider.tf`**: Configures the AWS provider.
 - **`main.tf`**: Contains the resource definitions for:
   - VPC, subnets, and security groups
   - EC2 instances for web and application tiers
   - RDS database
   - Application Load Balancer
+- **`variables.tf`**: Defines variables used in the configuration.
 - **`web_userdata.sh`**: User data script for initializing web instances.
 - **`app_userdata.sh`**: User data script for initializing application instances.
 - **`db_userdata.sh`**: User data script for initializing the database.
@@ -95,6 +91,12 @@ During the deployment, you might encounter the following challenges:
 - [Terraform AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
 - [AWS EC2 Documentation](https://docs.aws.amazon.com/ec2/index.html)
 - [AWS RDS Documentation](https://docs.aws.amazon.com/rds/index.html)
+
+## 🛠️ Troubleshooting Tips
+
+- **Initialization Errors**: Ensure your AWS CLI is configured correctly and that you have the necessary permissions.
+- **Resource Limits**: Be aware of AWS resource limits in your account. You may need to request increases for certain resources.
+- **Network Issues**: Verify your VPC and subnet configurations to ensure proper routing and security group settings.
 
 ---
 
